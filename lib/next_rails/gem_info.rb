@@ -80,7 +80,7 @@ module NextRails
       end
     end
 
-    def compatible_with_rails?(rails_version: Gem::Version.new("5.0"))
+    def compatible_with_rails?(rails_version: Gem::Version.new("4.1.5"))
       unsatisfied_rails_dependencies(rails_version: rails_version).empty?
     end
 

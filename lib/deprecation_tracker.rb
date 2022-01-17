@@ -31,7 +31,7 @@ class DeprecationTracker
   Object.prepend(KernelWarnTracker)
 
   # Ruby 2.2 and lower doesn't appear to allow overriding of Kernel.warn using `singleton_class.prepend`.
-  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.3.0")
+  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.1.8")
     Kernel.singleton_class.prepend(KernelWarnTracker)
   else
     def Kernel.warn(*args, &block)
